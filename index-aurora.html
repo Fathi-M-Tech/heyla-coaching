@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Heyla Coaching – Souhaila, Heilpraktikerin für Psychotherapie. Psychologische Beratung und Coaching für innere Stärke, Klarheit und Identität.">
+  <meta name="keywords" content="Heilpraktiker Psychotherapie, psychologische Beratung, Coaching, Stressbewältigung, innere Stärke, Identität">
+  <meta property="og:title" content="Heyla Coaching – Heilpraktikerin für Psychotherapie">
+  <meta property="og:description" content="Psychologische Beratung & Coaching mit Souhaila – zurück zu dir selbst finden.">
+  <title>Heyla Coaching – Heilpraktikerin für Psychotherapie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ============================================
+       AURORA ANIMATION – Sektion "Warum Heyla"
+       Übersetzt aus React/Tailwind → reines CSS
+       Farben: Heyla Brand (Berry + Powder Blue)
+       ============================================ */
+
+    /* Keyframe: exakt wie tailwind.config aurora */
+    @keyframes aurora {
+      from { background-position: 50% 50%, 50% 50%; }
+      to   { background-position: 350% 50%, 350% 50%; }
+    }
+
+    /* Sektion: overflow hidden für den Aurora-Overlay */
+    .warum {
+      position: relative;
+      overflow: hidden;
+      /* Etwas dunklere Basis damit Aurora besser leuchtet */
+      background: #b8cfe8;
+    }
+
+    /* Inhalt über dem Aurora-Layer */
+    .warum > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── Aurora-Layer ──────────────────────────────
+       Exakte Nachbildung des React-Komponenten:
+       - Zwei überlagerte repeating-linear-gradients
+       - Hintergrund: weißer Streifen-Gradient + Aurora-Farben
+       - filter: blur + invert(1) → erzeugt Lichtbögen
+       - ::after mit mix-blend-mode: difference
+       ────────────────────────────────────────── */
+    .warum-aurora {
+      position: absolute;
+      inset: -10px;
+      pointer-events: none;
+      z-index: 1;
+
+      /* Weißer Streifen-Gradient (wie --white-gradient im Original) */
+      /* Aurora-Gradient in Heyla-Farben:
+         Berry (#7B1B5B) → Powder Blue (#C5DCEF) → Mauve (#C47BA8)
+         → Periwinkle (#A8B8E0) → Deep Berry (#5C1244)
+         Nach invert(1) erscheinen diese als:
+         Mint-Grün → Warm-Orange → Soft-Gold → Warm-Beige → Gelbgrün
+         → in Kombination mit dem weißen Streifen ergibt das
+         einen sanften, perlmuttartigen Schimmer */
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          rgba(255,255,255,1)   0%,
+          rgba(255,255,255,1)   7%,
+          transparent          10%,
+          transparent          12%,
+          rgba(255,255,255,1)  16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #7B1B5B  10%,   /* Berry */
+          #C5DCEF  15%,   /* Powder Blue */
+          #9B2B75  20%,   /* Berry Light */
+          #D4A8C7  25%,   /* Soft Mauve */
+          #8AAECB  30%    /* Deep Blue */
+        );
+
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+
+      /* Blur + invert: erzeugt den typischen Aurora-Lichtbogen-Effekt */
+      filter: blur(10px) invert(1);
+
+      opacity: 0.55;
+      animation: aurora 60s linear infinite;
+
+      /* Radialmaske: Aurora erscheint von oben-rechts, läuft aus → wie Original */
+      -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+      mask-image:         radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+
+      will-change: background-position;
+    }
+
+    /* ::after – zweite Ebene mit mix-blend-mode: difference
+       Erzeugt den schimmernden "Überlagerungs"-Effekt des Originals */
+    .warum-aurora::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          rgba(255,255,255,1)   0%,
+          rgba(255,255,255,1)   7%,
+          transparent          10%,
+          transparent          12%,
+          rgba(255,255,255,1)  16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #7B1B5B  10%,
+          #C5DCEF  15%,
+          #9B2B75  20%,
+          #D4A8C7  25%,
+          #8AAECB  30%
+        );
+
+      background-size: 200%, 100%;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+      animation: aurora 60s linear infinite;
+    }
+
+    /* ── Hero Aurora ──────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-aurora {
+      position: absolute;
+      inset: -10px;
+      pointer-events: none;
+      z-index: 0;
+
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          rgba(255,255,255,1)   0%,
+          rgba(255,255,255,1)   7%,
+          transparent          10%,
+          transparent          12%,
+          rgba(255,255,255,1)  16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #7B1B5B  10%,
+          #C5DCEF  15%,
+          #9B2B75  20%,
+          #D4A8C7  25%,
+          #8AAECB  30%
+        );
+
+      background-size: 300%, 200%;
+      background-position: 50% 50%, 50% 50%;
+      filter: blur(10px) invert(1);
+      opacity: 0.45;
+      animation: aurora 60s linear infinite;
+
+      /* Maske: Aurora von oben-links, läuft zur Mitte aus */
+      -webkit-mask-image: radial-gradient(ellipse at 0% 0%, black 10%, transparent 65%);
+      mask-image:         radial-gradient(ellipse at 0% 0%, black 10%, transparent 65%);
+
+      will-change: background-position;
+    }
+
+    .hero-aurora::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        repeating-linear-gradient(
+          100deg,
+          rgba(255,255,255,1)   0%,
+          rgba(255,255,255,1)   7%,
+          transparent          10%,
+          transparent          12%,
+          rgba(255,255,255,1)  16%
+        ),
+        repeating-linear-gradient(
+          100deg,
+          #7B1B5B  10%,
+          #C5DCEF  15%,
+          #9B2B75  20%,
+          #D4A8C7  25%,
+          #8AAECB  30%
+        );
+
+      background-size: 200%, 100%;
+      background-attachment: fixed;
+      mix-blend-mode: difference;
+      animation: aurora 60s linear infinite;
+    }
+
+    /* Hero-Inhalt & Orbs über Aurora-Layer */
+    .hero-orb3,
+    .hero__inner,
+    .wave {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* USP-Karten: etwas opaker damit Text auf Aurora gut lesbar bleibt */
+    .warum .usp {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 24px rgba(123, 27, 91, 0.08);
+    }
+
+    .warum .usp:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Section-Titel auf Aurora: minimal anpassen für Kontrast */
+    .warum .section-title,
+    .warum .usp__title {
+      color: #1E1E1E;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <a href="#hero" class="header__logo">
+        <img src="Logo.jpg" alt="Heyla Coaching Logo" class="logo-img">
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="#ueber-mich" class="nav__link">Über mich</a></li>
+          <li><a href="#leistungen" class="nav__link">Leistungen</a></li>
+          <li><a href="#ablauf" class="nav__link">Ablauf</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+          <li><a href="#kontakt" class="nav__link nav__link--cta">Termin vereinbaren</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-aurora" aria-hidden="true"></div>
+      <div class="hero-orb3" aria-hidden="true"></div>
+      <div class="hero__inner container">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">Heilpraktikerin für Psychotherapie</p>
+          <h1 class="hero__headline">
+            Du trägst gerade<br>
+            <em>sehr&nbsp;viel</em>
+          </h1>
+          <p class="hero__sub">
+            Ich begleite dich auf dem Weg zu mehr Klarheit, innerer Stärke und einem Leben,
+            das sich wieder stimmig anfühlt – ohne Druck, ohne Floskeln.
+          </p>
+          <a href="#kontakt" class="btn btn--primary">Termin vereinbaren</a>
+          <p class="hero__hint">Erstgespräch kostenlos &amp; unverbindlich</p>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__photo-wrap">
+            <img src="Souhaila.jpg" alt="Souhaila – Heilpraktikerin für Psychotherapie" class="hero__photo">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FAFAF8"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== KURZVORSTELLUNG ===== -->
+    <section class="intro" id="intro">
+      <div class="container container--narrow text-center">
+        <span class="section-tag">Willkommen</span>
+        <h2 class="section-title">Manchmal verliert man<br><em>den Faden zu sich selbst.</em></h2>
+        <p class="intro__text">
+          Durch Stress, anhaltende Erschöpfung oder tiefe Lebensfragen kann es passieren,
+          dass man sich selbst fremd wird. Als Heilpraktikerin für Psychotherapie und Coach
+          schaffe ich einen Raum, in dem du wieder Boden unter den Füßen spürst –
+          auf deine Weise, in deinem Tempo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== LEISTUNGEN ===== -->
+    <section class="leistungen" id="leistungen">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Leistungen</span>
+          <h2 class="section-title">Womit ich dich<br><em>begleiten kann</em></h2>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 16 C10 12 14 10 16 10 C18 10 22 12 22 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 16 L16 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Stressbewältigung</h3>
+            <p class="card__text">
+              Wenn der Alltag überfordert und innere Ruhe zur Seltenheit wird –
+              wir schaffen gemeinsam Strukturen und Strategien, die langfristig tragen.
+            </p>
+          </article>
+
+          <article class="card card--accent">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 4 L16 28 M8 8 L16 16 L24 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Identität &amp; Klarheit</h3>
+            <p class="card__text">
+              Wer bin ich? Was will ich wirklich? Diese Fragen begleite ich mit Tiefe,
+              Offenheit und dem Raum, den sie verdienen.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 6 C10 6 6 10 6 15 C6 22 16 28 16 28 C16 28 26 22 26 15 C26 10 22 6 16 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Emotionale Belastung</h3>
+            <p class="card__text">
+              Schwere Gefühle, Erschöpfung oder Orientierungslosigkeit –
+              wir schauen gemeinsam hin, ohne zu urteilen und ohne Schubladen.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="text-center cta-spacing">
+          <a href="#kontakt" class="btn btn--primary">Jetzt Termin vereinbaren</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABLAUF ===== -->
+    <section class="ablauf" id="ablauf">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">So funktioniert es</span>
+          <h2 class="section-title">Dein Weg zu<br><em>Heyla Coaching</em></h2>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step__number" aria-hidden="true">01</div>
+            <div class="step__content">
+              <h3 class="step__title">Erstkontakt</h3>
+              <p class="step__text">
+                Eine kurze Nachricht oder ein Anruf genügt. Kein aufwändiges Formular,
+                keine lange Warteliste – einfach melden.
+              </p>
+            </div>
+          </div>
+
+          <div class="step__connector" aria-hidden="true"></div>
+
+          <div class="step">
+            <div class="step__number" aria-hidden="true">02</div>
+            <div class="step__content">
+              <h3 class="step__title">Kostenloses Erstgespräch</h3>
+              <p class="step__text">
+                Wir lernen uns kennen, ich höre dir zu und wir schauen gemeinsam,
+                was du brauchst – unverbindlich und in einem sicheren Rahmen.
+              </p>
+            </div>
+          </div>
+
+          <div class="step__connector" aria-hidden="true"></div>
+
+          <div class="step">
+            <div class="step__number" aria-hidden="true">03</div>
+            <div class="step__content">
+              <h3 class="step__title">Dein persönlicher Weg</h3>
+              <p class="step__text">
+                In regelmäßigen Sitzungen begleite ich dich – persönlich oder flexibel online,
+                ganz nach deinen Möglichkeiten.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WARUM HEYLA – MIT AURORA ANIMATION ===== -->
+    <section class="warum" id="warum">
+
+      <!-- Aurora-Hintergrund-Layer (reines CSS, keine Dependencies) -->
+      <div class="warum-aurora" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Warum Heyla</span>
+          <h2 class="section-title">Was meine Arbeit<br><em>besonders macht</em></h2>
+        </div>
+
+        <div class="usps">
+          <div class="usp">
+            <div class="usp__icon" aria-hidden="true">✦</div>
+            <h3 class="usp__title">Individuell &amp; persönlich</h3>
+            <p class="usp__text">Kein Schema F. Jede Begleitung ist so einzigartig wie du.</p>
+          </div>
+          <div class="usp">
+            <div class="usp__icon" aria-hidden="true">✦</div>
+            <h3 class="usp__title">Flexibel &amp; erreichbar</h3>
+            <p class="usp__text">Persönlich vor Ort oder bequem von zu Hause – du entscheidest.</p>
+          </div>
+          <div class="usp">
+            <div class="usp__icon" aria-hidden="true">✦</div>
+            <h3 class="usp__title">Keine langen Wartezeiten</h3>
+            <p class="usp__text">Außerhalb des Kassensystems bedeutet: schnelle, unkomplizierte Termine.</p>
+          </div>
+          <div class="usp">
+            <div class="usp__icon" aria-hidden="true">✦</div>
+            <h3 class="usp__title">Vertraulich &amp; auf Augenhöhe</h3>
+            <p class="usp__text">Absolute Diskretion. Kein Urteil. Ein Raum für dich.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÜBER MICH ===== -->
+    <section class="ueber" id="ueber-mich">
+      <div class="container">
+        <div class="ueber__inner">
+
+          <div class="ueber__image-wrap">
+            <img src="Souhaila.jpg" alt="Souhaila – Heilpraktikerin für Psychotherapie" class="ueber__photo">
+          </div>
+
+          <div class="ueber__content">
+            <span class="section-tag">Über mich</span>
+            <h2 class="section-title">Ich bin Souhaila –<br><em>Heilpraktikerin &amp; Coach</em></h2>
+            <p>
+              Ich weiß, wie es sich anfühlt, wenn man nicht mehr weiß, wo man steht.
+              Wenn der Alltag erdrückt und die eigene Mitte schwer zu finden ist.
+            </p>
+            <p>
+              Meine Arbeit als <strong>Heilpraktikerin für Psychotherapie</strong>
+              ist geprägt von echtem Interesse am Menschen, fachlicher Tiefe und dem Wunsch,
+              Räume zu schaffen, in denen echte Veränderung möglich wird.
+            </p>
+            <p>
+              Ich begleite dich dort, wo du gerade bist – ohne Bewertung,
+              mit Klarheit, Herz und dem festen Glauben an deine innere Stärke.
+            </p>
+            <a href="#kontakt" class="btn btn--outline">Termin vereinbaren</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <div class="container container--narrow">
+        <div class="section-header text-center">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Häufige<br><em>Fragen</em></h2>
+        </div>
+
+        <div class="faq__list">
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Für wen ist Heyla Coaching geeignet?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Für Menschen, die in einer belastenden Lebensphase stecken, sich neu orientieren möchten
+                oder einfach jemanden suchen, der ehrlich zuhört und begleitet – ohne Diagnose, ohne Schubladen.
+                Ob Stress, innere Unruhe, Orientierungslosigkeit oder das Gefühl, nicht mehr ganz man selbst zu sein:
+                du bist willkommen, wie du bist.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Wie läuft das erste Gespräch ab?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Das Erstgespräch dauert ca. 30 Minuten und ist kostenlos. Es dient dem gegenseitigen
+                Kennenlernen: Du erzählst, was dich beschäftigt, ich erkläre, wie ich arbeite –
+                und gemeinsam schauen wir, ob wir gut zusammenpassen. Kein Druck, keine Verpflichtung.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Was unterscheidet das von einer Psychotherapie?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Als Heilpraktikerin für Psychotherapie arbeite ich außerhalb des gesetzlichen
+                Kassensystems. Das bedeutet mehr Flexibilität, deutlich kürzere Wartezeiten und
+                ein individuell abgestimmtes Vorgehen – ohne formale Diagnose und ohne Kassenantrag.
+                Die Kosten werden in der Regel selbst getragen. Bei Interesse lässt sich manches
+                ggf. über eine private Zusatzversicherung abrechnen.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABSCHLUSS-CTA ===== -->
+    <section class="cta-section" id="kontakt">
+      <div class="container text-center">
+        <span class="section-tag section-tag--light">Bereit?</span>
+        <h2 class="cta-section__headline">
+          Der erste Schritt<br>
+          <em>ist der wichtigste.</em>
+        </h2>
+        <p class="cta-section__text">
+          Melde dich – unkompliziert, ohne Formulare, ohne Wartezeit.
+          Ich freue mich darauf, dich kennenzulernen.
+        </p>
+        <div class="cta-section__buttons">
+          <a href="mailto:info@heyla-coaching.de" class="btn btn--white">Per E-Mail schreiben</a>
+          <a href="tel:+49000000000" class="btn btn--outline-white">Anrufen</a>
+        </div>
+        <p class="cta-section__location">📍 Persönlich &amp; online verfügbar</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <img src="Logo.jpg" alt="Heyla Coaching" class="footer__logo">
+          <p class="footer__tagline">Heilpraktikerin für Psychotherapie<br>Persönlich &amp; online</p>
+        </div>
+
+        <div class="footer__contact">
+          <h4 class="footer__heading">Kontakt</h4>
+          <p>
+            <a href="tel:+49000000000" class="footer__link">+49 000 000 000</a><br>
+            <a href="mailto:info@heyla-coaching.de" class="footer__link">info@heyla-coaching.de</a>
+          </p>
+        </div>
+
+        <div class="footer__nav">
+          <h4 class="footer__heading">Rechtliches</h4>
+          <ul class="footer__list">
+            <li><a href="impressum.html" class="footer__link">Impressum</a></li>
+            <li><a href="datenschutz.html" class="footer__link">Datenschutz</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__social">
+          <h4 class="footer__heading">Social Media</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Heyla Coaching · Souhaila · Heilpraktikerin für Psychotherapie</p>
+        <p class="footer__disclaimer">
+          Hinweis: Die auf dieser Website dargestellten Angebote ersetzen keine ärztliche oder
+          psychotherapeutische Behandlung. Bei akuten psychischen Erkrankungen wende dich bitte
+          an einen Arzt oder die Telefonseelsorge (0800 111 0 111).
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
