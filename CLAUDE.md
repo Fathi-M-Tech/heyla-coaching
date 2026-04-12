@@ -138,16 +138,24 @@ Logo | Angebote | Über mich | Therapeutisches Boxen [Bald] | Preise | Pro Bono 
 
 ---
 
-## Offene Platzhalter (einzutragen)
+## Deployment
 
-| Feld | Ort |
-|---|---|
-| Vollständiger Name | impressum.html, datenschutz.html |
-| Praxisadresse Lüdenscheid | impressum.html, datenschutz.html, Footer |
-| Telefonnummer | alle Footer, index.html CTA, honorar.html CTA |
-| Instagram-URL | alle Footer (`href="#"` mit Kommentar) |
-| Hosting-Anbieter | datenschutz.html |
-| Datum Datenschutzerklärung | datenschutz.html |
+- GitHub Pages aktiv: **https://fathi-m-tech.github.io/heyla-coaching/**
+- Branch: `main`, Pfad: `/`
+- Stand: 12. April 2026 – zur ersten Kundensichtung freigegeben
+
+---
+
+## Offene Platzhalter (einzutragen vor Go-Live)
+
+| Feld | Ort | Status |
+|---|---|---|
+| Vollständiger Name | impressum.html, datenschutz.html | offen |
+| Praxisadresse Lüdenscheid | impressum.html, datenschutz.html, Footer | offen |
+| Telefonnummer | alle Footer, index.html CTA, honorar.html CTA | offen |
+| Hosting-Anbieter | datenschutz.html | offen |
+| Datum Datenschutzerklärung | datenschutz.html | offen |
+| Instagram-URL | ✅ eingetragen | erledigt |
 
 ---
 
@@ -155,6 +163,8 @@ Logo | Angebote | Über mich | Therapeutisches Boxen [Bald] | Preise | Pro Bono 
 
 - **Keine Gedankenstriche** im Fließtext (Kundenwunsch). Ersatz: Komma, Doppelpunkt oder Punkt.
 - **Nur Instagram** als Social-Media-Link (kein Facebook, kein LinkedIn).
+- Instagram-URL eingetragen: `https://www.instagram.com/heyla_coaching?igsh=MWkzM3N6ZHNwd3JidQ==`
+- Instagram-Klick öffnet DSGVO-Consent-Modal (script.js, `data-instagram-consent`-Attribut).
 - Bilder aus dem Ordner `Bilder/` – alte Bilder (Souhaila.jpg) werden nicht mehr verwendet.
 - Logo.jpg bleibt aktiv (kein Ersatz geliefert).
 - `index-aurora.html` wird ignoriert / nicht weiterentwickelt.
@@ -163,16 +173,22 @@ Logo | Angebote | Über mich | Therapeutisches Boxen [Bald] | Preise | Pro Bono 
 - Boxing-Teaser-Bild: `object-fit: contain` (nicht cover), damit das Bild vollständig sichtbar ist.
 - „Souhaila" im Text: fett (`<strong>`) + Berry-Lila (`color: var(--berry)`).
 - Ich-sehe-Sektion hat keinen Eyebrow-Text mehr (wurde entfernt).
+- Boxing-Hero und Boxing-CTA: nicht mehr schwarz (`#1c1c1c`), sondern Powder-Blue (Hero) und Berry (CTA).
+- `<strong>` in `.ueber__content` erhält automatisch Berry-Farbe via CSS (`.ueber__content strong`).
+- Pro-Bono „Für wen"-Kacheln: weiße Karten mit Berry-Balken oben, SVG-Icons (kein Emoji).
+- Boxing „Für wen"-Icons: SVG-Icons (kein Emoji), Berry-Hintergrund-Kreis.
+- `.price-card--coming.price-card--featured` hat explizit `opacity: 1` + Berry-Hintergrund (verhindert Unsichtbarkeit durch CSS-Kaskade).
 
-## Responsive Design (Stand 10. April 2026)
+## Responsive Design (Stand 12. April 2026)
 
-Alle Breakpoints in `style.css` konsolidiert. Keine verstreuten doppelten Media Queries mehr.
+Alle Breakpoints in `style.css` konsolidiert. Keine doppelten Media Queries.
 
 | Breakpoint | Verhalten |
 |---|---|
 | ≤1024px (Tablet) | Footer 3 Spalten, Über-mich 2 Spalten, Boxing-Danach stapelt |
-| ≤768px (Mobile) | Header 68px, 1-Spalten-Layout überall, Nav-Overlay, Button volle Breite |
-| ≤480px (Klein) | Footer 1 Spalte, Karten/Preise/Qual jeweils 1 Spalte |
+| ≤768px (Mobile) | Spacing reduziert, Header 68px, Nav-Overlay, probono-who-grid 1 Spalte, qual-grid 2 Spalten |
+| ≤640px (Mittel) | Leistungskarten, Preiskarten, Boxing-Grids → 1 Spalte; CTA-Buttons vollbreit |
+| ≤480px (Klein) | Footer 1 Spalte, Headings kleiner (clamp), Spacing weiter reduziert |
 
 ---
 
