@@ -801,30 +801,6 @@ strong {
   overflow: hidden;
 }
 
-/* Dekorative Kreise */
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
-.cta-section::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -5%;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-}
 
 .cta-section__headline {
   font-family: var(--font-heading);
