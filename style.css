@@ -1030,6 +1030,12 @@ strong {
 /* MOBILE ≤768px */
 @media (max-width: 768px) {
 
+  /* Abstände reduzieren */
+  :root {
+    --space-xl: 4.5rem;
+    --space-lg: 3rem;
+  }
+
   /* Header kompakter */
   .header__inner {
     height: 68px;
@@ -1225,16 +1231,99 @@ strong {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
+
+  /* Pro-Bono Zielgruppe: 3 schmale Spalten → 1 Spalte */
+  .probono-who-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero-Hinweis zentrieren */
+  .hero__hint {
+    text-align: center;
+  }
+
+  /* Section Header Abstand kompakter */
+  .section-header {
+    margin-bottom: var(--space-md);
+  }
+
+  /* Qualifikationen auf Tablet: 2 Spalten */
+  .qual-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Page-Hero Unterseiten kompakter */
+  .page-hero {
+    padding-bottom: var(--space-md);
+  }
+
+  /* Über-mich Abstand kompakter */
+  .ueber__content {
+    gap: var(--space-sm);
+  }
+}
+
+/* MITTLERE MOBILGERÄTE ≤640px */
+@media (max-width: 640px) {
+
+  /* Boxing Zielgruppe: explizit 1 Spalte */
+  .boxing-targets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Boxing Fakten: explizit 1 Spalte */
+  .boxing-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Leistungskarten 1 Spalte */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Preiskarten 1 Spalte */
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA Buttons vollbreit + gestapelt */
+  .cta-section__buttons,
+  .boxing-cta-section .cta-section__buttons,
+  .ig-modal__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    padding-inline: 0;
+  }
+
+  .cta-section__buttons .btn,
+  .ig-modal__buttons .btn {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 /* KLEINE MOBILGERÄTE ≤480px */
 @media (max-width: 480px) {
   :root {
-    --space-lg: 3rem;
-    --space-xl: 4.5rem;
+    --space-xl: 3.5rem;
+    --space-lg: 2.5rem;
+    --space-md: 1.5rem;
   }
 
-  /* Karten: 1 Spalte */
+  /* Typografie: kompaktere Headings */
+  h1 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  h3 { font-size: clamp(1.05rem, 4.5vw, 1.3rem); }
+
+  .hero__headline {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .boxing-page-hero__title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  /* Karten: 1 Spalte (bereits durch 640px, Sicherheit) */
   .cards {
     grid-template-columns: 1fr;
   }
@@ -1258,9 +1347,35 @@ strong {
     grid-template-columns: 1fr;
   }
 
+  /* Boxing Inklusiv: weniger Padding */
+  .boxing-inclusiv-item {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Section Header kompakter */
+  .section-header {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* Ich-sehe Foto: Höhe begrenzen */
+  .ich-sehe__photo {
+    max-height: 260px;
+  }
+
+  /* FAQ Fragen */
+  .faq__question {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
   /* Buttons volle Breite */
   .ich-sehe__content .btn {
     width: 100%;
+  }
+
+  /* Container Padding enger */
+  .container {
+    padding-inline: 1.25rem;
   }
 }
 
@@ -2042,12 +2157,6 @@ strong {
   font-size: 0.9rem;
   line-height: 1.65;
   color: var(--text-mid);
-}
-
-@media (max-width: 640px) {
-  .probono-who-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .probono-process-box {
