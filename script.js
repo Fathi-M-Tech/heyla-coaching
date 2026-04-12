@@ -2,6 +2,71 @@
 // HEYLA COACHING – JavaScript
 // ============================================
 
+// ===== INSTAGRAM CONSENT MODAL =====
+(function () {
+  // Modal-HTML dynamisch erstellen
+  const modal = document.createElement('div');
+  modal.id = 'ig-modal';
+  modal.className = 'ig-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'ig-modal-title');
+  modal.innerHTML = `
+    <div class="ig-modal__box">
+      <h2 class="ig-modal__title" id="ig-modal-title">Weiter zu Instagram</h2>
+      <p class="ig-modal__text">
+        Mit Klick wechseln Sie zum externen Anbieter Instagram und erklären sich dadurch
+        mit den Datenschutzbedingungen von Meta einverstanden.
+      </p>
+      <div class="ig-modal__buttons">
+        <button id="ig-cancel" class="btn btn--outline">Abbrechen</button>
+        <button id="ig-confirm" class="btn btn--primary">Weiter zu Instagram</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  let pendingHref = '';
+
+  function openModal(href) {
+    pendingHref = href;
+    modal.classList.add('is-visible');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('ig-cancel').focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-visible');
+    document.body.style.overflow = '';
+    pendingHref = '';
+  }
+
+  // Links abfangen
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[data-instagram-consent]');
+    if (!link) return;
+    e.preventDefault();
+    openModal(link.getAttribute('href'));
+  });
+
+  document.getElementById('ig-cancel').addEventListener('click', closeModal);
+
+  document.getElementById('ig-confirm').addEventListener('click', function () {
+    window.open(pendingHref, '_blank', 'noopener,noreferrer');
+    closeModal();
+  });
+
+  // Overlay-Klick schließt Modal
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Escape-Taste schließt Modal
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-visible')) closeModal();
+  });
+})();
+
 // ===== HEADER: Scroll-Effekt =====
 const header = document.getElementById('header');
 

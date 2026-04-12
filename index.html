@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Heyla Coaching – Souhaila, Heilpraktikerin für Psychotherapie. Psychologische Beratung und Coaching für innere Stärke, Klarheit und Identität.">
-  <meta name="keywords" content="Heilpraktiker Psychotherapie, psychologische Beratung, Coaching, Stressbewältigung, innere Stärke, Identität">
+  <meta name="description" content="Heyla Coaching – Souhaila, Heilpraktikerin für Psychotherapie in Lüdenscheid & online. Psychologische Beratung, Coaching für innere Stärke, Identität und Selbstfindung.">
+  <meta name="keywords" content="Heilpraktiker Psychotherapie, psychologische Beratung, Coaching, Stressbewältigung, innere Stärke, Identität, Lüdenscheid">
   <meta property="og:title" content="Heyla Coaching – Heilpraktikerin für Psychotherapie">
-  <meta property="og:description" content="Psychologische Beratung & Coaching mit Souhaila – zurück zu dir selbst finden.">
+  <meta property="og:description" content="Ich kann dich sehen. Psychologische Beratung & Coaching mit Souhaila – zurück zu dir selbst finden.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Logo.jpg">
   <title>Heyla Coaching – Heilpraktikerin für Psychotherapie</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Great+Vibes&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=cormorant-garamond:300,300i,400,400i,500,500i,600,600i|great-vibes:400|raleway:300,400,500,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,16 +22,22 @@
   <header class="header" id="header">
     <div class="header__inner container">
 
-      <a href="#hero" class="header__logo">
+      <a href="index.html" class="header__logo">
         <img src="Logo.jpg" alt="Heyla Coaching Logo" class="logo-img">
       </a>
 
       <nav class="nav" id="nav" aria-label="Hauptnavigation">
         <ul class="nav__list">
           <li><a href="#ueber-mich" class="nav__link">Über mich</a></li>
-          <li><a href="#leistungen" class="nav__link">Leistungen</a></li>
-          <li><a href="#ablauf" class="nav__link">Ablauf</a></li>
-          <li><a href="#faq" class="nav__link">FAQ</a></li>
+          <li><a href="#angebote" class="nav__link">Leistungen</a></li>
+          <li>
+            <a href="therapeutisches-boxen.html" class="nav__link nav__link--badge">
+              Therapeutisches Boxen
+              <span class="nav__badge">Bald</span>
+            </a>
+          </li>
+          <li><a href="honorar.html" class="nav__link">Preisliste</a></li>
+          <li><a href="pro-bono.html" class="nav__link">Pro Bono</a></li>
           <li><a href="#kontakt" class="nav__link nav__link--cta">Termin vereinbaren</a></li>
         </ul>
       </nav>
@@ -52,56 +58,74 @@
       <div class="hero-orb3" aria-hidden="true"></div>
       <div class="hero__inner container">
 
-        <div class="hero__content">
-          <p class="hero__eyebrow">Heilpraktikerin für Psychotherapie</p>
-          <h1 class="hero__headline">
-            Du trägst gerade<br>
-            <em>sehr&nbsp;viel.</em>
-          </h1>
-          <p class="hero__sub">
-            Ich begleite dich auf dem Weg zu mehr Klarheit, innerer Stärke und einem Leben,
-            das sich wieder stimmig anfühlt – ohne Druck, ohne Floskeln.
-          </p>
-          <a href="#kontakt" class="btn btn--primary">Termin vereinbaren</a>
-          <p class="hero__hint">Erstgespräch kostenlos &amp; unverbindlich</p>
+        <!-- Links: Willkommen + Logo -->
+        <div class="hero__welcome">
+          <p class="hero__welcome-pre">Willkommen bei</p>
+          <img src="Logo.jpg" alt="Heyla Coaching Logo" class="hero__logo-large">
         </div>
 
-        <div class="hero__visual">
-          <div class="hero__photo-wrap">
-            <img src="Souhaila.jpg" alt="Souhaila – Heilpraktikerin für Psychotherapie" class="hero__photo">
-          </div>
+        <!-- Rechts: Tagline -->
+        <div class="hero__tagline">
+          <p class="hero__tagline-text">
+            Ein Raum, in dem man authentisch sein darf
+            <em>(gesehen werden)</em>
+            und die Kraft für Veränderung findet
+            <em>(Flügel entfalten)</em>
+          </p>
         </div>
 
       </div>
 
-      <!-- Dekorative Welle -->
       <div class="wave" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FAFAF8"/>
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F3EDE8"/>
         </svg>
       </div>
     </section>
 
-    <!-- ===== KURZVORSTELLUNG ===== -->
-    <section class="intro" id="intro">
-      <div class="container container--narrow text-center">
-        <span class="section-tag">Willkommen</span>
-        <h2 class="section-title">Manchmal verliert man<br><em>den Faden zu sich selbst.</em></h2>
-        <p class="intro__text">
-          Durch Stress, anhaltende Erschöpfung oder tiefe Lebensfragen kann es passieren,
-          dass man sich selbst fremd wird. Als Heilpraktikerin für Psychotherapie und Coach
-          schaffe ich einen Raum, in dem du wieder Boden unter den Füßen spürst –
-          auf deine Weise, in deinem Tempo.
-        </p>
+    <!-- ===== ICH KANN DICH SEHEN ===== -->
+    <section class="ich-sehe" id="ich-sehe">
+      <div class="container">
+        <div class="ich-sehe__inner">
+
+          <div class="ich-sehe__content">
+            <h1 class="hero__headline">
+              Ich kann<br>
+              <em>dich&nbsp;sehen.</em>
+            </h1>
+            <p class="hero__sub">
+              Das Leben ist oft schwer und manchmal fühlt es sich an, als wären die eigenen Flügel festgebunden.
+              Vielleicht hast du das Gefühl, nur noch zu funktionieren, während deine eigenen Bedürfnisse im Nebel verschwinden.
+              Ich bin <strong style="color: var(--berry);">Souhaila</strong> und ich reiche dir die Hand, um diesen Nebel zu lichten!
+            </p>
+            <p class="hero__sub">
+              In meinem Coaching schaffe ich für dich einen geschützten Raum, in dem du so sein darfst, wie du wirklich bist.
+              Hier wirst du nicht nur gehört, du wirst gesehen und ernst genommen.
+              Gemeinsam lösen wir die Fesseln, die dich am Boden halten, damit du mit neuer Klarheit und Leichtigkeit
+              deine Flügel wieder ausbreiten kannst.
+            </p>
+            <a href="#kontakt" class="btn btn--primary">Lass uns gemeinsam losfliegen</a>
+            <p class="hero__hint">Vorgespräch kostenlos &amp; unverbindlich</p>
+          </div>
+
+          <div class="ich-sehe__visual">
+            <img src="Bilder/Bild 01 Startseite.png" alt="Souhaila, Heilpraktikerin für Psychotherapie" class="ich-sehe__photo" loading="lazy">
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- ===== LEISTUNGEN ===== -->
-    <section class="leistungen" id="leistungen">
+    <!-- ===== ANGEBOTE ===== -->
+    <section class="leistungen" id="angebote">
       <div class="container">
         <div class="section-header text-center">
           <span class="section-tag">Leistungen</span>
-          <h2 class="section-title">Womit ich dich<br><em>begleiten kann</em></h2>
+          <h2 class="section-title">Gesehen werden &amp;<br><em>Flügel entfalten.</em></h2>
+          <p class="section-subtitle">
+            Jeder Weg ist individuell. Ich begleite dich dort, wo du gerade stehst –
+            mit Herz, Verstand und fundierten Methoden.
+          </p>
         </div>
 
         <div class="cards">
@@ -109,44 +133,66 @@
           <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M10 16 C10 12 14 10 16 10 C18 10 22 12 22 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M16 16 L16 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M16 4 L26 8 L26 17 C26 22 21 27 16 29 C11 27 6 22 6 17 L6 8 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="card__title">Stressbewältigung</h3>
-            <p class="card__text">
-              Wenn der Alltag überfordert und innere Ruhe zur Seltenheit wird –
-              wir schaffen gemeinsam Strukturen und Strategien, die langfristig tragen.
-            </p>
+            <h3 class="card__title">Mentale Stabilität &amp; Krisenberatung</h3>
+            <p class="card__text--sub">Wenn das Leben schwer wird.</p>
+            <ul class="card__list">
+              <li>Psychologische Beratung bei Ängsten, Burnout &amp; seelischen Blockaden</li>
+              <li>Anti-Mobbing-Training bei Konflikten im Arbeitsalltag oder Alltag</li>
+              <li>Angehörigenberatung &amp; Psychoedukation bei psychischen Erkrankungen</li>
+            </ul>
           </article>
 
           <article class="card card--accent">
             <div class="card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 4 L16 28 M8 8 L16 16 L24 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 28 L16 8 M6 16 C6 10 10 6 16 8 M26 16 C26 10 22 6 16 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="card__title">Identität &amp; Klarheit</h3>
-            <p class="card__text">
-              Wer bin ich? Was will ich wirklich? Diese Fragen begleite ich mit Tiefe,
-              Offenheit und dem Raum, den sie verdienen.
-            </p>
+            <h3 class="card__title">Wachstum &amp; Persönlichkeitsentwicklung</h3>
+            <p class="card__text--sub">Wenn du bereit für deine Flügel bist.</p>
+            <ul class="card__list">
+              <li>Identität &amp; Kultur: Coaching für Menschen zwischen verschiedenen Welten</li>
+              <li>Selbstwert-Training: eigene Stärken sehen und sicher auftreten</li>
+              <li>Selbstfindungsphase: Unterstützung in Identitätskrisen</li>
+            </ul>
           </article>
 
           <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 6 C10 6 6 10 6 15 C6 22 16 28 16 28 C16 28 26 22 26 15 C26 10 22 6 16 6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M10 22 C10 22 8 12 16 6 C24 6 26 14 22 20 C18 26 10 22 10 22Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M10 22 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <h3 class="card__title">Emotionale Belastung</h3>
-            <p class="card__text">
-              Schwere Gefühle, Erschöpfung oder Orientierungslosigkeit –
-              wir schauen gemeinsam hin, ohne zu urteilen und ohne Schubladen.
-            </p>
+            <h3 class="card__title">Achtsamkeit &amp; Prävention</h3>
+            <p class="card__text--sub">Wenn du nach Leichtigkeit suchst.</p>
+            <ul class="card__list">
+              <li>Autogenes Training mit Weltenwanderung: Tiefenentspannung und innere Fantasiereisen</li>
+              <li>Stressmanagement &amp; Resilienz für einen gelasseneren, widerstandsfähigeren Alltag</li>
+            </ul>
           </article>
 
+        </div>
+
+        <!-- Therapeutisches Boxen Teaser -->
+        <div class="boxing-teaser">
+          <div class="boxing-teaser__image-wrap">
+            <img src="Bilder/Bild therapeutisches Boxen.png" alt="Therapeutisches Boxen bei Heyla Coaching – Bald verfügbar" class="boxing-teaser__image" loading="lazy">
+          </div>
+          <div class="boxing-teaser__content">
+            <span class="badge badge--soon">Bald verfügbar · Lüdenscheid</span>
+            <h3 class="boxing-teaser__title">Therapeutisches Boxen</h3>
+            <p class="boxing-teaser__subtitle">Körperliche Kraft für mentale Stärke.</p>
+            <p class="boxing-teaser__text">
+              Manchmal müssen Emotionen bewegt werden, damit sich im Kopf etwas lösen kann.
+              Wenn Worte nicht ausreichen, darf der Körper sprechen –
+              angestaute Spannung gesund abbauen, Ohnmachtsgefühle überwinden, Mut im sicheren Raum trainieren.
+            </p>
+            <a href="therapeutisches-boxen.html" class="btn btn--outline">Mehr erfahren</a>
+          </div>
         </div>
 
         <div class="text-center cta-spacing">
@@ -168,10 +214,10 @@
           <div class="step">
             <div class="step__number" aria-hidden="true">01</div>
             <div class="step__content">
-              <h3 class="step__title">Erstkontakt</h3>
+              <h3 class="step__title">Kostenloses Vorgespräch</h3>
               <p class="step__text">
-                Eine kurze Nachricht oder ein Anruf genügt. Kein aufwändiges Formular,
-                keine lange Warteliste – einfach melden.
+                Ca. 20 Minuten telefonisch. Du schilderst dein Anliegen,
+                ich erkläre wie ich arbeite. Kein Formular, keine Warteliste.
               </p>
             </div>
           </div>
@@ -181,10 +227,10 @@
           <div class="step">
             <div class="step__number" aria-hidden="true">02</div>
             <div class="step__content">
-              <h3 class="step__title">Kostenloses Erstgespräch</h3>
+              <h3 class="step__title">Erstgespräch</h3>
               <p class="step__text">
-                Wir lernen uns kennen, ich höre dir zu und wir schauen gemeinsam,
-                was du brauchst – unverbindlich und in einem sicheren Rahmen.
+                Wir lernen uns kennen und schauen gemeinsam, was du brauchst –
+                in einem sicheren Rahmen, auf Augenhöhe, ohne Druck.
               </p>
             </div>
           </div>
@@ -196,45 +242,12 @@
             <div class="step__content">
               <h3 class="step__title">Dein persönlicher Weg</h3>
               <p class="step__text">
-                In regelmäßigen Sitzungen begleite ich dich – persönlich oder flexibel online,
-                ganz nach deinen Möglichkeiten.
+                In regelmäßigen Sitzungen begleite ich dich, persönlich in Lüdenscheid
+                oder flexibel online, ganz nach deinen Möglichkeiten.
               </p>
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== WARUM HEYLA ===== -->
-    <section class="warum" id="warum">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Warum Heyla</span>
-          <h2 class="section-title">Was meine Arbeit<br><em>besonders macht</em></h2>
-        </div>
-
-        <div class="usps">
-          <div class="usp">
-            <div class="usp__icon" aria-hidden="true">✦</div>
-            <h3 class="usp__title">Individuell &amp; persönlich</h3>
-            <p class="usp__text">Kein Schema F. Jede Begleitung ist so einzigartig wie du.</p>
-          </div>
-          <div class="usp">
-            <div class="usp__icon" aria-hidden="true">✦</div>
-            <h3 class="usp__title">Flexibel &amp; erreichbar</h3>
-            <p class="usp__text">Persönlich vor Ort oder bequem von zu Hause – du entscheidest.</p>
-          </div>
-          <div class="usp">
-            <div class="usp__icon" aria-hidden="true">✦</div>
-            <h3 class="usp__title">Keine langen Wartezeiten</h3>
-            <p class="usp__text">Außerhalb des Kassensystems bedeutet: schnelle, unkomplizierte Termine.</p>
-          </div>
-          <div class="usp">
-            <div class="usp__icon" aria-hidden="true">✦</div>
-            <h3 class="usp__title">Vertraulich &amp; auf Augenhöhe</h3>
-            <p class="usp__text">Absolute Diskretion. Kein Urteil. Ein Raum für dich.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -245,26 +258,83 @@
         <div class="ueber__inner">
 
           <div class="ueber__image-wrap">
-            <img src="Souhaila.jpg" alt="Souhaila – Heilpraktikerin für Psychotherapie" class="ueber__photo">
+            <img src="Bilder/Bild mit Laptop.jpg" alt="Souhaila – Heilpraktikerin für Psychotherapie" class="ueber__photo" loading="lazy">
           </div>
 
           <div class="ueber__content">
-            <span class="section-tag">Über mich</span>
-            <h2 class="section-title">Ich bin Souhaila –<br><em>Heilpraktikerin &amp; Coach</em></h2>
+            <span class="section-tag">Wer steckt hinter Heyla?</span>
+            <h2 class="section-title">Von der Wurzel<br><em>zur Entfaltung.</em></h2>
             <p>
-              Ich weiß, wie es sich anfühlt, wenn man nicht mehr weiß, wo man steht.
-              Wenn der Alltag erdrückt und die eigene Mitte schwer zu finden ist.
+              Hinter meinem Coaching-Namen <strong>Heyla</strong> steckt mehr als ein schöner Klang –
+              es ist ein Stück meiner Identität. Abgeleitet von meinem Namen <strong>Souhaila</strong>,
+              der so viel wie „die Sanfte" oder „der helle Stern" bedeutet, ist Heyla die Essenz
+              meiner Arbeit: deine professionelle Begleiterin durch persönliche Stürme.
             </p>
             <p>
-              Meine Arbeit als <strong>Heilpraktikerin für Psychotherapie</strong>
-              ist geprägt von echtem Interesse am Menschen, fachlicher Tiefe und dem Wunsch,
-              Räume zu schaffen, in denen echte Veränderung möglich wird.
+              Als junge Frau und Mutter, die <strong>zwischen zwei Welten</strong> aufgewachsen ist,
+              kenne ich die Herausforderung, Brücken zu bauen und die eigene Identität in einem Meer
+              von Erwartungen zu finden. Ich bin selbst <strong>hochsensibel</strong> –
+              was sich früher oft wie eine Last anfühlte, ist heute meine größte Stärke in der Arbeit mit dir.
             </p>
             <p>
-              Ich begleite dich dort, wo du gerade bist – ohne Bewertung,
-              mit Klarheit, Herz und dem festen Glauben an deine innere Stärke.
+              Mein Antrieb: die Begleiterin zu sein, die ich mir in meinen schwersten Zeiten
+              selbst gewünscht hätte.
             </p>
             <a href="#kontakt" class="btn btn--outline">Termin vereinbaren</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUALIFIKATIONEN ===== -->
+    <section class="qual" id="qualifikationen">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Qualifikationen</span>
+          <h2 class="section-title">Fundiertes Wissen<br><em>für deine Sicherheit.</em></h2>
+          <p class="section-subtitle">
+            Hinter meiner Arbeit stehen nicht nur Intuition, sondern wissenschaftlich
+            fundierte Ausbildung und stetige Weiterentwicklung.
+          </p>
+        </div>
+
+        <div class="qual-grid">
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Heilpraktikerin für Psychotherapie</h3>
+            <p class="qual-item__text">Staatlich geprüft und zugelassen (Gesundheitsamt Dortmund). Die Grundlage meiner Arbeit und die Sicherheit meiner Klienten.</p>
+          </div>
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Kognitive Verhaltenstherapie</h3>
+            <p class="qual-item__text">Blockierende Denkmuster im „Hier und Jetzt" identifizieren und durch hilfreiche Strategien für den Alltag ersetzen.</p>
+          </div>
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Sokratischer Dialog</h3>
+            <p class="qual-item__text">Das Herzstück meiner Arbeit: durch gezielte Fragen zur Selbsterkenntnis animieren, statt fertige Antworten vorzugeben.</p>
+          </div>
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Stressmanagement &amp; Resilienz</h3>
+            <p class="qual-item__text">Spezialisierte Begleitung bei Burnout-Prävention, Ängsten und mentaler Überlastung, besonders im digitalen Zeitalter.</p>
+          </div>
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Expertise Mobbing &amp; Ausgrenzung</h3>
+            <p class="qual-item__text">Professionelle Begleitung, um Belastungen abzubauen, das Selbstwertgefühl zu stärken und handlungsfähig zu werden.</p>
+          </div>
+
+          <div class="qual-item">
+            <div class="qual-item__icon" aria-hidden="true">✦</div>
+            <h3 class="qual-item__title">Systemische Methoden</h3>
+            <p class="qual-item__text">Den Menschen im Kontext seiner Beziehungen betrachten, festgefahrene Muster sichtbar machen und neue Handlungsspielräume erschließen.</p>
           </div>
 
         </div>
@@ -289,9 +359,8 @@
             <div class="faq__answer">
               <p>
                 Für Menschen, die in einer belastenden Lebensphase stecken, sich neu orientieren möchten
-                oder einfach jemanden suchen, der ehrlich zuhört und begleitet – ohne Diagnose, ohne Schubladen.
-                Ob Stress, innere Unruhe, Orientierungslosigkeit oder das Gefühl, nicht mehr ganz man selbst zu sein:
-                du bist willkommen, wie du bist.
+                oder jemanden suchen, der ehrlich zuhört. Ob Stress, innere Unruhe, Orientierungslosigkeit
+                oder das Gefühl, nicht mehr ganz man selbst zu sein. Du bist willkommen, wie du bist.
               </p>
             </div>
           </details>
@@ -303,25 +372,52 @@
             </summary>
             <div class="faq__answer">
               <p>
-                Das Erstgespräch dauert ca. 30 Minuten und ist kostenlos. Es dient dem gegenseitigen
-                Kennenlernen: Du erzählst, was dich beschäftigt, ich erkläre, wie ich arbeite –
-                und gemeinsam schauen wir, ob wir gut zusammenpassen. Kein Druck, keine Verpflichtung.
+                Das kostenlose Vorgespräch dauert ca. 20 Minuten und findet telefonisch statt.
+                Du schilderst, was dich beschäftigt, ich erkläre wie ich arbeite –
+                gemeinsam schauen wir, ob wir gut zusammenpassen. Kein Druck, keine Verpflichtung.
               </p>
             </div>
           </details>
 
           <details class="faq__item">
             <summary class="faq__question">
-              Was unterscheidet das von einer Psychotherapie?
+              Was unterscheidet das von einer Kassentherapie?
               <span class="faq__icon" aria-hidden="true">+</span>
             </summary>
             <div class="faq__answer">
               <p>
-                Als Heilpraktikerin für Psychotherapie arbeite ich außerhalb des gesetzlichen
-                Kassensystems. Das bedeutet mehr Flexibilität, deutlich kürzere Wartezeiten und
-                ein individuell abgestimmtes Vorgehen – ohne formale Diagnose und ohne Kassenantrag.
-                Die Kosten werden in der Regel selbst getragen. Bei Interesse lässt sich manches
-                ggf. über eine private Zusatzversicherung abrechnen.
+                Als Heilpraktikerin für Psychotherapie arbeite ich außerhalb des Kassensystems –
+                das bedeutet mehr Flexibilität, deutlich kürzere Wartezeiten und ein individuell
+                abgestimmtes Vorgehen ohne formale Diagnose. Die Kosten werden in der Regel selbst
+                getragen und können ggf. über eine private Zusatzversicherung abgerechnet werden.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Was kostet eine Sitzung?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Eine Einzelsitzung (60 Min.) kostet 95,00 €. Es gibt auch Coaching-Pakete ab 275,00 €
+                für eine nachhaltige Begleitung.
+                <a href="honorar.html" class="faq__link">Alle Preise &amp; Pakete findest du hier.</a>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary class="faq__question">
+              Was ist das Pro-Bono-Angebot?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq__answer">
+              <p>
+                Mentale Gesundheit sollte kein Privileg sein. Ich vergebe pro Monat bis zu 2 Plätze
+                für Menschen in schwierigen finanziellen Notlagen, kostenfrei oder zu reduzierten Konditionen.
+                <a href="pro-bono.html" class="faq__link">Mehr zum Pro-Bono-Angebot.</a>
               </p>
             </div>
           </details>
@@ -330,7 +426,7 @@
       </div>
     </section>
 
-    <!-- ===== ABSCHLUSS-CTA ===== -->
+    <!-- ===== CTA / KONTAKT ===== -->
     <section class="cta-section" id="kontakt">
       <div class="container text-center">
         <span class="section-tag section-tag--light">Bereit?</span>
@@ -339,14 +435,14 @@
           <em>ist der wichtigste.</em>
         </h2>
         <p class="cta-section__text">
-          Melde dich – unkompliziert, ohne Formulare, ohne Wartezeit.
+          Melde dich, unkompliziert, ohne Formulare, ohne lange Wartezeit.
           Ich freue mich darauf, dich kennenzulernen.
         </p>
         <div class="cta-section__buttons">
           <a href="mailto:info@heyla-coaching.de" class="btn btn--white">Per E-Mail schreiben</a>
           <a href="tel:+49000000000" class="btn btn--outline-white">Anrufen</a>
         </div>
-        <p class="cta-section__location">📍 Persönlich &amp; online verfügbar</p>
+        <p class="cta-section__location">📍 Persönlich in Lüdenscheid &amp; online verfügbar</p>
       </div>
     </section>
 
@@ -359,11 +455,11 @@
 
         <div class="footer__brand">
           <img src="Logo.jpg" alt="Heyla Coaching" class="footer__logo">
-          <p class="footer__tagline">Heilpraktikerin für Psychotherapie<br>Persönlich &amp; online</p>
+          <p class="footer__tagline">Heilpraktikerin für Psychotherapie<br>Lüdenscheid &amp; online</p>
         </div>
 
         <div class="footer__contact">
-          <h4 class="footer__heading">Kontakt</h4>
+          <h3 class="footer__heading">Kontakt</h3>
           <p>
             <a href="tel:+49000000000" class="footer__link">+49 000 000 000</a><br>
             <a href="mailto:info@heyla-coaching.de" class="footer__link">info@heyla-coaching.de</a>
@@ -371,7 +467,17 @@
         </div>
 
         <div class="footer__nav">
-          <h4 class="footer__heading">Rechtliches</h4>
+          <h3 class="footer__heading">Angebote</h3>
+          <ul class="footer__list">
+            <li><a href="#angebote" class="footer__link">Leistungen</a></li>
+            <li><a href="therapeutisches-boxen.html" class="footer__link">Therapeutisches Boxen</a></li>
+            <li><a href="honorar.html" class="footer__link">Preise</a></li>
+            <li><a href="pro-bono.html" class="footer__link">Pro Bono</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__nav">
+          <h3 class="footer__heading">Rechtliches</h3>
           <ul class="footer__list">
             <li><a href="impressum.html" class="footer__link">Impressum</a></li>
             <li><a href="datenschutz.html" class="footer__link">Datenschutz</a></li>
@@ -379,25 +485,13 @@
         </div>
 
         <div class="footer__social">
-          <h4 class="footer__heading">Social Media</h4>
+          <h3 class="footer__heading">Social Media</h3>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/heyla_coaching?igsh=MWkzM3N6ZHNwd3JidQ==" data-instagram-consent class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <circle cx="12" cy="12" r="4"/>
                 <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
               </svg>
             </a>
           </div>
