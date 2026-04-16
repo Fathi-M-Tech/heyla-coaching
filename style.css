@@ -1199,19 +1199,7 @@ strong {
   }
 
   .boxing-page-hero__image-wrap {
-    display: block;
-    width: 100%;
-    padding: 0;
-    order: 0;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-  }
-
-  .boxing-page-hero__image {
-    width: 100%;
-    height: 100%;
-    max-width: unset;
-    object-fit: cover;
+    display: none;
   }
 
   /* Boxing Danach-Bild */
