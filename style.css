@@ -1531,6 +1531,24 @@ strong {
   margin: 0.25rem 0 0.5rem;
 }
 
+/* ===== BOXING PROMO ===== */
+.boxing-promo-mobile {
+  display: block;
+  margin-top: var(--space-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(123, 27, 91, 0.15);
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.boxing-promo-mobile__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ===== WELTENWANDERUNG TEASER ===== */
 .weltenwanderung-teaser {
   display: grid;
@@ -2551,6 +2569,7 @@ strong {
   .boxing-teaser {
     grid-template-columns: 1fr;
   }
+
 
   /* Ich-sehe: 1-Spalte, Foto oben */
   .ich-sehe__inner {
