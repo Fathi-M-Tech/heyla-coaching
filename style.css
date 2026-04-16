@@ -1200,11 +1200,16 @@ strong {
   }
 
   .boxing-page-hero__image-wrap {
-    display: flex;
-    justify-content: center;
+    display: block;
     width: 100%;
-    padding: var(--space-md) 0;
-    order: unset;
+    padding: 0;
+    order: -1;
+  }
+
+  .boxing-page-hero__image {
+    width: 100%;
+    height: auto;
+    max-width: unset;
   }
 
   /* Boxing Danach-Bild */
@@ -2549,17 +2554,6 @@ strong {
   /* Pro-Bono Zielgruppe: 3 Spalten → 1 Spalte */
   .probono-who-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Boxing Hero: Bild über Text */
-  .boxing-page-hero__image-wrap {
-    order: -1;
-  }
-
-  .boxing-page-hero__image {
-    width: 100%;
-    height: auto;
-    max-width: unset;
   }
 
   /* Boxing Teaser: 1-Spalte, Bild (1. im DOM) erscheint oben */
