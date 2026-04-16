@@ -15,8 +15,8 @@
     <div class="ig-modal__box">
       <h2 class="ig-modal__title" id="ig-modal-title">Weiter zu Instagram</h2>
       <p class="ig-modal__text">
-        Mit Klick wechseln Sie zum externen Anbieter Instagram und erklären sich dadurch
-        mit den Datenschutzbedingungen von Meta einverstanden.
+        Du verlässt jetzt diese Website. Beim Besuch von Instagram gelten die
+        Datenschutzbestimmungen von Meta Platforms Ireland Ltd.
       </p>
       <div class="ig-modal__buttons">
         <button id="ig-cancel" class="btn btn--outline">Abbrechen</button>
