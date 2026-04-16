@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "gdpr-dsgvo-expert": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "computedHash": "49d6130fbf6899042bdee5a698df63ac88b0bb786c0a9472cf328c368d400cd3"
+    }
+  }
+}

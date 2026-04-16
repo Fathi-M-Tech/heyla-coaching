@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid slice">
+  <defs>
+
+    <!-- Dunkler Wald-Hintergrund: warm-dunkles Grün/Braun -->
+    <radialGradient id="bg" cx="47%" cy="32%" r="60%">
+      <stop offset="0%"   stop-color="#2C2214"/>
+      <stop offset="30%"  stop-color="#181408"/>
+      <stop offset="75%"  stop-color="#0C1006"/>
+      <stop offset="100%" stop-color="#070A04"/>
+    </radialGradient>
+
+    <!-- Lichtquelle: gebündeltes Leuchten von oben -->
+    <radialGradient id="g-source" cx="47%" cy="-8%" r="58%" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#FFF4B0" stop-opacity="1.0"/>
+      <stop offset="12%"  stop-color="#F5D860" stop-opacity="0.85"/>
+      <stop offset="30%"  stop-color="#D4A020" stop-opacity="0.55"/>
+      <stop offset="55%"  stop-color="#A07010" stop-opacity="0.22"/>
+      <stop offset="80%"  stop-color="#604408" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#0A0C04" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Goldener Dunst / Atmosphäre im Strahlenkern -->
+    <radialGradient id="g-haze" cx="47%" cy="40%" r="38%">
+      <stop offset="0%"   stop-color="#E8C040" stop-opacity="0.38"/>
+      <stop offset="45%"  stop-color="#C08818" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#806010" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Strahl-Gradient: hell oben → transparent unten (userSpaceOnUse) -->
+    <linearGradient id="g-ray" x1="0" y1="-20" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F8E888" stop-opacity="0.88"/>
+      <stop offset="22%"  stop-color="#E8C040" stop-opacity="0.60"/>
+      <stop offset="50%"  stop-color="#C09020" stop-opacity="0.32"/>
+      <stop offset="78%"  stop-color="#907010" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#604808" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Boden-Gradient -->
+    <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#0A0E05" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#040604" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <!-- Weicher Blur für Lichtstrahlen -->
+    <filter id="f-ray" x="-20%" y="-5%" width="140%" height="115%">
+      <feGaussianBlur stdDeviation="5 1.5"/>
+    </filter>
+
+    <!-- Blur für Lichtquelle -->
+    <filter id="f-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+
+    <!-- Leichter Blur für hintere Baumstämme -->
+    <filter id="f-trunk-bg" x="-5%" y="0" width="110%" height="100%">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
+
+  </defs>
+
+  <!-- ① Waldhintergrund -->
+  <rect width="800" height="560" fill="url(#bg)"/>
+
+  <!-- ② Dunkle Baumkronen am Rand (angedeutet) -->
+  <ellipse cx="100"  cy="80"  rx="140" ry="100" fill="#0A0E06" opacity="0.90"/>
+  <ellipse cx="720"  cy="70"  rx="150" ry="110" fill="#090D05" opacity="0.90"/>
+  <ellipse cx="400"  cy="40"  rx="120" ry="70"  fill="#0E1408" opacity="0.60"/>
+  <ellipse cx="250"  cy="55"  rx="90"  ry="60"  fill="#0B1007" opacity="0.70"/>
+  <ellipse cx="580"  cy="50"  rx="100" ry="65"  fill="#0B1007" opacity="0.70"/>
+
+  <!-- ③ Lichtstrahlen Hauptgruppe -->
+  <g filter="url(#f-ray)">
+    <!-- Strahl 1 – ganz links, breit, fein -->
+    <polygon points="374,-20 386,-20  -60,560  100,560"
+             fill="url(#g-ray)" opacity="0.28"/>
+    <!-- Strahl 2 -->
+    <polygon points="376,-20 384,-20   55,560  200,560"
+             fill="url(#g-ray)" opacity="0.42"/>
+    <!-- Strahl 3 -->
+    <polygon points="377,-20 383,-20  170,560  295,560"
+             fill="url(#g-ray)" opacity="0.55"/>
+    <!-- Strahl 4 – Hauptstrahl, zentral, am hellsten -->
+    <polygon points="376,-20 384,-20  278,560  400,560"
+             fill="url(#g-ray)" opacity="0.72"/>
+    <!-- Strahl 5 (zweiter Hauptstrahl, leicht versetzt) -->
+    <polygon points="377,-20 383,-20  340,560  450,560"
+             fill="url(#g-ray)" opacity="0.60"/>
+    <!-- Strahl 6 -->
+    <polygon points="376,-20 384,-20  445,560  560,560"
+             fill="url(#g-ray)" opacity="0.45"/>
+    <!-- Strahl 7 -->
+    <polygon points="375,-20 385,-20  545,560  665,560"
+             fill="url(#g-ray)" opacity="0.30"/>
+    <!-- Strahl 8 – ganz rechts, schmal, fein -->
+    <polygon points="375,-20 385,-20  640,560  760,560"
+             fill="url(#g-ray)" opacity="0.18"/>
+  </g>
+
+  <!-- ④ Zweite Strahlenschicht (etwas anders gewinkelt, mehr Tiefe) -->
+  <g filter="url(#f-ray)" opacity="0.55">
+    <polygon points="378,-20 382,-20  210,560  300,560"
+             fill="url(#g-ray)" opacity="0.45"/>
+    <polygon points="378,-20 382,-20  308,560  390,560"
+             fill="url(#g-ray)" opacity="0.55"/>
+    <polygon points="378,-20 382,-20  395,560  472,560"
+             fill="url(#g-ray)" opacity="0.40"/>
+  </g>
+
+  <!-- ⑤ Goldener Atmosphäre-Dunst -->
+  <rect width="800" height="560" fill="url(#g-haze)"/>
+
+  <!-- ⑥ Lichtquell-Leuchten (von oben, sehr hell) -->
+  <rect width="800" height="560" fill="url(#g-source)"/>
+
+  <!-- Zusätzlicher Kern-Glow (kleiner heller Fleck an der Quelle) -->
+  <ellipse cx="380" cy="0" rx="90" ry="60"
+           fill="#FFF8C0" opacity="0.45" filter="url(#f-glow)"/>
+
+  <!-- ⑦ Hintere Baumstämme (dunkler, etwas weich) -->
+  <path d="M148,0 L160,0 L165,560 L143,560 Z" fill="#120E08" opacity="0.88" filter="url(#f-trunk-bg)"/>
+  <path d="M388,0 L398,0 L402,560 L384,560 Z" fill="#120E08" opacity="0.82" filter="url(#f-trunk-bg)"/>
+  <path d="M615,0 L625,0 L629,560 L611,560 Z" fill="#120E08" opacity="0.80" filter="url(#f-trunk-bg)"/>
+
+  <!-- ⑧ Vordere Baumstämme (sehr dunkel, scharf, dominant) -->
+  <!-- Linker Stamm – dick, nah -->
+  <path d="M48,0 L80,0 L86,560 L42,560 Z" fill="#090705"/>
+  <!-- Zweiter Stamm links-mitte -->
+  <path d="M253,0 L273,0 L277,560 L249,560 Z" fill="#0A0806"/>
+  <!-- Rechter Hauptstamm -->
+  <path d="M492,0 L516,0 L520,560 L488,560 Z" fill="#090705"/>
+  <!-- Stamm ganz rechts (angeschnitten) -->
+  <path d="M714,0 L734,0 L738,560 L710,560 Z" fill="#0A0806"/>
+
+  <!-- Leichtes Abschatten der Stämme (Tiefe) -->
+  <path d="M80,0 L95,0 L101,560 L86,560 Z" fill="#0A0806" opacity="0.45"/>
+  <path d="M273,0 L283,0 L287,560 L277,560 Z" fill="#0A0806" opacity="0.40"/>
+  <path d="M516,0 L528,0 L532,560 L520,560 Z" fill="#0A0806" opacity="0.40"/>
+
+  <!-- ⑨ Boden / Waldboden -->
+  <rect x="0" y="440" width="800" height="120" fill="url(#g-ground)"/>
+
+  <!-- Bodenbewuchs (dunkle grüne Flecken, angedeutet) -->
+  <ellipse cx="70"  cy="548" rx="75"  ry="24" fill="#141E08" opacity="0.75"/>
+  <ellipse cx="240" cy="555" rx="100" ry="20" fill="#121C06" opacity="0.65"/>
+  <ellipse cx="450" cy="552" rx="120" ry="22" fill="#141E08" opacity="0.70"/>
+  <ellipse cx="700" cy="550" rx="90"  ry="22" fill="#121C06" opacity="0.65"/>
+  <ellipse cx="340" cy="558" rx="60"  ry="14" fill="#101808" opacity="0.55"/>
+
+  <!-- Vordergrund-Erde (unterste Schicht, sehr dunkel) -->
+  <path d="M0,518 Q200,505 400,510 Q600,515 800,502 L800,560 L0,560 Z"
+        fill="#060805"/>
+
+</svg>
