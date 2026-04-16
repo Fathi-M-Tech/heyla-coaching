@@ -1202,8 +1202,8 @@ strong {
     display: block;
     width: 100%;
     padding: 0;
-    order: -1;
-    aspect-ratio: 16 / 9;
+    order: 0;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
   }
 
