@@ -1198,6 +1198,9 @@ strong {
     padding-bottom: var(--space-md);
   }
 
+  .boxing-page-hero__image-wrap {
+    display: none;
+  }
 
   /* Boxing Danach-Bild */
   .boxing-after-inner {
