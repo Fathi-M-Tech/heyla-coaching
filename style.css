@@ -1177,14 +1177,13 @@ strong {
   }
 
   .boxing-teaser__image-wrap {
-    aspect-ratio: 4 / 3;
     min-height: unset;
     max-height: unset;
   }
 
   .boxing-teaser__image {
-    object-fit: cover;
-    height: 100%;
+    object-fit: contain;
+    height: auto;
   }
 
   .boxing-teaser__content {
@@ -2552,17 +2551,15 @@ strong {
     grid-template-columns: 1fr;
   }
 
-  /* Boxing Hero: Bild über Text, sichtbare Mindesthöhe */
+  /* Boxing Hero: Bild über Text */
   .boxing-page-hero__image-wrap {
     order: -1;
-    min-height: 280px;
   }
 
   .boxing-page-hero__image {
     width: 100%;
-    height: 100%;
+    height: auto;
     max-width: unset;
-    object-fit: cover;
   }
 
   /* Boxing Teaser: 1-Spalte, Bild (1. im DOM) erscheint oben */
