@@ -1498,15 +1498,12 @@ strong {
 .boxing-teaser__image-wrap {
   min-height: 280px;
   overflow: hidden;
-  background: var(--cream);
-  display: flex;
-  align-items: center;
 }
 
 .boxing-teaser__image {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
