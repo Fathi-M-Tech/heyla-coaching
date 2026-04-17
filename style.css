@@ -1177,14 +1177,7 @@ strong {
   }
 
   .boxing-teaser__image-wrap {
-    min-height: unset;
-    max-height: unset;
-  }
-
-  .boxing-teaser__image {
-    height: auto;
-    object-fit: contain;
-    object-position: center;
+    display: none;
   }
 
   .boxing-teaser__content {
