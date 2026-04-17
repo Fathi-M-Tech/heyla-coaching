@@ -1179,13 +1179,12 @@ strong {
   .boxing-teaser__image-wrap {
     min-height: unset;
     max-height: unset;
-    aspect-ratio: 16 / 9;
   }
 
   .boxing-teaser__image {
-    height: 100%;
-    object-fit: cover;
-    object-position: 55% center;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .boxing-teaser__content {
