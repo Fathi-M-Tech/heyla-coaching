@@ -1177,7 +1177,7 @@ strong {
   }
 
   .boxing-teaser__image-wrap {
-    display: none;
+    min-height: 240px;
   }
 
   .boxing-teaser__content {
