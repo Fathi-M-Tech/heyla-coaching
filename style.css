@@ -1199,7 +1199,19 @@ strong {
   }
 
   .boxing-page-hero__image-wrap {
-    display: none;
+    display: flex;
+    order: -1;
+    margin-bottom: var(--space-md);
+    justify-content: center;
+  }
+
+  .boxing-page-hero__image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 8px 32px rgba(123, 27, 91, 0.15);
   }
 
   /* Boxing Danach-Bild */
@@ -1529,24 +1541,6 @@ strong {
   line-height: 1.8;
   color: var(--text-mid);
   margin: 0.25rem 0 0.5rem;
-}
-
-/* ===== BOXING PROMO ===== */
-.boxing-promo-mobile {
-  display: block;
-  margin-top: var(--space-md);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(123, 27, 91, 0.15);
-  max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.boxing-promo-mobile__img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* ===== WELTENWANDERUNG TEASER ===== */
