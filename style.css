@@ -1185,6 +1185,7 @@ strong {
   .boxing-teaser__image {
     height: 100%;
     object-fit: cover;
+    object-position: right center;
   }
 
   .boxing-teaser__content {
@@ -1201,19 +1202,7 @@ strong {
   }
 
   .boxing-page-hero__image-wrap {
-    display: flex;
-    order: -1;
-    margin-bottom: var(--space-md);
-    justify-content: center;
-  }
-
-  .boxing-page-hero__image {
-    width: 100%;
-    max-width: 100%;
-    border-radius: var(--radius-lg);
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    box-shadow: 0 8px 32px rgba(123, 27, 91, 0.15);
+    display: none;
   }
 
   /* Boxing Danach-Bild */
