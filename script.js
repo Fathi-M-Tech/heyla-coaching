@@ -110,17 +110,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Escape-Taste schließt Menü
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && nav.classList.contains('open')) {
-    burger.classList.remove('open');
-    nav.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-    document.body.style.overflow = '';
-    burger.focus();
-  }
-});
-
 
 // ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll(

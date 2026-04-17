@@ -297,7 +297,7 @@ strong {
   color: var(--white) !important;
   padding: 0.5rem 1.25rem;
   border-radius: 4px;
-  min-height: 44px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
   transition: background var(--transition), transform var(--transition);
@@ -911,8 +911,8 @@ strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.6);
@@ -1206,16 +1206,6 @@ strong {
   /* Pro-Bono Zielgruppe: 3 schmale Spalten → 1 Spalte */
   .probono-who-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Weltenwanderung Teaser: 1 Spalte */
-  .weltenwanderung-teaser {
-    grid-template-columns: 1fr;
-  }
-
-  .weltenwanderung-teaser__image-wrap {
-    aspect-ratio: 4 / 3;
-    min-height: unset;
   }
 
   /* Hero-Hinweis zentrieren */
@@ -2531,12 +2521,51 @@ strong {
   min-width: 140px;
 }
 
-/* ===== BARRIEREFREIHEIT: Bewegungsreduktion ===== */
-@media (prefers-reduced-motion: reduce) {
-  .hero::before,
-  .hero::after,
-  .hero .hero-orb3 {
-    animation: none;
+/* ===== MOBILE OVERRIDES (nach späten CSS-Definitionen) ===== */
+@media (max-width: 768px) {
+  /* Hero: kein horizontaler Strich, vertikaler Strich bleibt */
+  .hero__tagline {
+    border-top: none;
+  }
+
+  /* Weltenwanderung Teaser: 1-Spalte */
+  .weltenwanderung-teaser {
+    grid-template-columns: 1fr;
+  }
+
+  .weltenwanderung-teaser__image-wrap {
+    aspect-ratio: 4 / 3;
+    min-height: unset;
+  }
+
+  /* Pro-Bono Zielgruppe: 3 Spalten → 1 Spalte */
+  .probono-who-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Boxing Teaser: 1-Spalte, Bild (1. im DOM) erscheint oben */
+  .boxing-teaser {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Ich-sehe: 1-Spalte, Foto oben */
+  .ich-sehe__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ich-sehe__visual {
+    order: -1;
+  }
+
+  .ich-sehe__content .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* Boxing Danach: 1-Spalte, Bild oben (Bild ist erstes Kind im DOM) */
+  .boxing-after-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
-
