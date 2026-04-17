@@ -1787,6 +1787,12 @@ strong {
   order: 2;
 }
 
+@media (max-width: 768px) {
+  .boxing-page-hero__image-wrap {
+    display: none;
+  }
+}
+
 .boxing-page-hero__content {
   order: 1;
 }
