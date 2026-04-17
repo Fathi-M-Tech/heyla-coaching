@@ -1179,10 +1179,12 @@ strong {
   .boxing-teaser__image-wrap {
     min-height: unset;
     max-height: unset;
+    aspect-ratio: 16 / 9;
   }
 
   .boxing-teaser__image {
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   .boxing-teaser__content {
@@ -1810,11 +1812,12 @@ strong {
 
 .boxing-page-hero__image {
   width: 100%;
-  max-width: 620px;
+  height: auto;
+  max-width: 580px;
   display: block;
   border-radius: var(--radius-lg);
-  object-fit: contain;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
 }
 
 /* Boxing Körper-Fakten */
@@ -2577,5 +2580,11 @@ strong {
   .ich-sehe__content .btn {
     align-self: stretch;
     text-align: center;
+  }
+
+  /* Boxing Danach: 1-Spalte, Bild oben (Bild ist erstes Kind im DOM) */
+  .boxing-after-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
